@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Leveraging RELATED for Cross-Table Calculated Columns in DAX">
+    <meta name="description" content="Understand and apply the DAX RELATED function to create calculated columns that retrieve values from related tables, including handling blank values.">
+    <meta property="og:title" content="Leveraging RELATED for Cross-Table Calculated Columns in DAX">
+    <meta property="og:description" content="Understand and apply the DAX RELATED function to create calculated columns that retrieve values from related tables, including handling blank values.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/leveraging-related-for-cross-table-calculated-columns-in-dax.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/leveraging-related-for-cross-table-calculated-columns-in-dax.html">
+    <title>Leveraging RELATED for Cross-Table Calculated Columns in DAX</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Leveraging RELATED for Cross-Table Calculated Columns in DAX</h1>
+    <h3>🧮 Function: RELATED</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        The RELATED function in DAX is used within a calculated column to retrieve a value from a column in another table that is on the 'one' side of a one-to-many relationship. It navigates the relationship automatically, provided that a relationship already exists between the tables. This allows you to enrich your current table with contextually relevant data from a dimension table, enabling more complex calculations and insights directly within the data model.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            The `RELATED` function is invaluable for enriching your tables by retrieving a *single value* from a related dimension table on the 'one' side of an active relationship. For example, you'd use `RELATED` within a calculated column on your `Sales` table to pull in the `Product Category Name` from your `Products` table, allowing you to easily analyze or visualize sales performance directly by category without merging data.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Artist age at tour start = Tour[Start year] - RELATED('Artist'[Year formed])</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

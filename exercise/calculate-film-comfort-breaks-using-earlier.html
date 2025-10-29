@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Calculate Film Comfort Breaks using EARLIER">
+    <meta name="description" content="To calculate the required number of comfort breaks for each film based on its running time, by referencing a non-joined comfort breaks table using the EARLIER function to manage row context.">
+    <meta property="og:title" content="Calculate Film Comfort Breaks using EARLIER">
+    <meta property="og:description" content="To calculate the required number of comfort breaks for each film based on its running time, by referencing a non-joined comfort breaks table using the EARLIER function to manage row context.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/calculate-film-comfort-breaks-using-earlier.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/calculate-film-comfort-breaks-using-earlier.html">
+    <title>Calculate Film Comfort Breaks using EARLIER</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Calculate Film Comfort Breaks using EARLIER</h1>
+    <h3>🧮 Function: EARLIER, CALCULATE, VALUES</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        The EARLIER function is crucial for referring to a column value from an outer row context when an inner row context has been established (e.g., within an iterator like FILTER or in a calculated column that iterates over another table). In this exercise, while iterating over the 'ComfortBreaks' table, EARLIER(Films[Running Time]) allows us to access the running time of the 'current' film row. CALCULATE is used to modify the filter context, and VALUES(Column) ensures that a single distinct value is returned from the filtered table, which is necessary when no aggregation is explicitly performed.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As a DAX analyst, you'll frequently need to perform complex row-level calculations that involve comparing values within specific groups, such as ranking products by their sales within each product category. In such a calculated column, `EARLIER` is crucial for capturing the *current row's* specific `[ProductCategory]` and `[ProductSales]` values from the outer evaluation context. `CALCULATE` then modifies the filter context, using these `EARLIER` values to perform aggregations or counts exclusively within that category. Simultaneously, `VALUES` can be employed within this `CALCULATE` context to dynamically retrieve and filter by the distinct category values, ensuring your comparison or aggregation is precisely scoped to the relevant group.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">NumberBreaks = 
+    // Your DAX formula here</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

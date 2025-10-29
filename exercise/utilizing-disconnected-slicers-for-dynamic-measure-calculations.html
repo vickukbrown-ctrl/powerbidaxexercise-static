@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Utilizing Disconnected Slicers for Dynamic Measure Calculations">
+    <meta name="description" content="Learn how to use a disconnected slicer to dynamically influence measure calculations without directly filtering the main data model, and how to apply this to visual titles and conditional formatting.">
+    <meta property="og:title" content="Utilizing Disconnected Slicers for Dynamic Measure Calculations">
+    <meta property="og:description" content="Learn how to use a disconnected slicer to dynamically influence measure calculations without directly filtering the main data model, and how to apply this to visual titles and conditional formatting.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/utilizing-disconnected-slicers-for-dynamic-measure-calculations.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/utilizing-disconnected-slicers-for-dynamic-measure-calculations.html">
+    <title>Utilizing Disconnected Slicers for Dynamic Measure Calculations</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Utilizing Disconnected Slicers for Dynamic Measure Calculations</h1>
+    <h3>🧮 Function: SELECTEDVALUE, CALCULATE, AVERAGEX</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        A disconnected slicer is a slicer based on a table that has no active relationships with other tables in your data model. This allows the slicer to provide user input without directly filtering the entire model. To utilize the selection from such a slicer in a DAX measure, functions like SELECTEDVALUE or VALUES are used to retrieve the selected item(s), which can then be incorporated into calculations or visual properties like titles. This technique is powerful for 'what-if' analysis or dynamic reporting.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            Alright class, let's talk about a powerful trio you'll frequently use together for dynamic insights:  Imagine you need to display the 'Average Sales per Customer' *specifically for a sales region* that your user selects from a slicer. You'd leverage `SELECTEDVALUE` to capture that chosen region, then use `AVERAGEX` to iterate through each unique customer in that region, calculating their total sales before averaging them. Finally, `CALCULATE` would wrap this entire expression, enforcing the filter from `SELECTEDVALUE` to ensure your `AVERAGEX` only considers customers within the precise region selected, providing a highly responsive and relevant average.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Selected Country = SELECTEDVALUE('CountryPicker'[Country Name])</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

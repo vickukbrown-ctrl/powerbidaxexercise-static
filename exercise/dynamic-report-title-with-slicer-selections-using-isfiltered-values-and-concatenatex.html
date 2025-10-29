@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Dynamic Report Title with Slicer Selections using ISFILTERED, VALUES, and CONCATENATEX">
+    <meta name="description" content="Learn to create a dynamic measure for a report title that automatically updates based on user selections in a slicer, handling single, multiple, or no selections.">
+    <meta property="og:title" content="Dynamic Report Title with Slicer Selections using ISFILTERED, VALUES, and CONCATENATEX">
+    <meta property="og:description" content="Learn to create a dynamic measure for a report title that automatically updates based on user selections in a slicer, handling single, multiple, or no selections.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/dynamic-report-title-with-slicer-selections-using-isfiltered-values-and-concatenatex.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/dynamic-report-title-with-slicer-selections-using-isfiltered-values-and-concatenatex.html">
+    <title>Dynamic Report Title with Slicer Selections using ISFILTERED, VALUES, and CONCATENATEX</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Dynamic Report Title with Slicer Selections using ISFILTERED, VALUES, and CONCATENATEX</h1>
+    <h3>🧮 Function: ISFILTERED, VALUES, CONCATENATEX</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        This exercise leverages several key DAX functions for dynamic reporting. The ISFILTERED function checks if a specific column (e.g., Voting[Area]) is currently being filtered. The VALUES function returns a table of distinct values from a column, which can be implicitly converted to a scalar value if only one distinct value exists. When multiple values are selected, CONCATENATEX iterates over the selected values and concatenates them into a single string, perfect for displaying multiple selections in a title.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            When building dynamic and user-friendly reports, you often need to show what filters are currently applied. For example, to display the selected product categories in a report title or card, you'd use `ISFILTERED` to first check if the 'Product'[Category] column is actively being filtered. If it is, `VALUES('Product'[Category])` retrieves the distinct categories currently selected by the user, which you then elegantly combine into a single, comma-separated string using `CONCATENATEX` for a clear display like Selected Categories: Electronics, Clothing, Books.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Title = "Default Report Title"</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Calculating Quarter-to-Date (QTD) and Previous Quarter Sales">
+    <meta name="description" content="Learn to calculate Quarter-to-Date (QTD) sales and sales for the immediately preceding quarter using Power BI's time intelligence functions.">
+    <meta property="og:title" content="Calculating Quarter-to-Date (QTD) and Previous Quarter Sales">
+    <meta property="og:description" content="Learn to calculate Quarter-to-Date (QTD) sales and sales for the immediately preceding quarter using Power BI's time intelligence functions.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/calculating-quarter-to-date-qtd-and-previous-quarter-sales.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/calculating-quarter-to-date-qtd-and-previous-quarter-sales.html">
+    <title>Calculating Quarter-to-Date (QTD) and Previous Quarter Sales</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Calculating Quarter-to-Date (QTD) and Previous Quarter Sales</h1>
+    <h3>🧮 Function: CALCULATE, TOTALQTD, DATESQTD, DATEADD, SUM</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        Quarter-to-Date (QTD) calculations aggregate values from the beginning of the current quarter up to the current date within the filter context. The `TOTALQTD` function provides a concise way to achieve this. Alternatively, `CALCULATE` combined with `DATESQTD` can be used for more flexible QTD calculations. To retrieve values from a previous period, `DATEADD` is used within `CALCULATE`. `DATEADD` shifts the date context by a specified number of intervals (e.g., -1 quarter), allowing for direct comparisons with historical periods.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As a Power BI analyst, you'll frequently use `TOTALQTD(SUM([Sales]))` to calculate the running quarter-to-date sales, providing immediate insight into current quarter performance. For more flexible or comparative analysis, you can leverage `CALCULATE` with functions like `DATESQTD` or `DATEADD` to define custom QTD periods or show the current quarter's sales alongside the same period from the prior quarter, revealing critical trends and variances.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1. Download and unzip the provided data file (implied from the exercise text).
+2. Create a new Power BI file and load the necessary tables from the downloaded worksheets.
+3. Ensure your 'Calendar' table is correctly set up and marked as a date table.
+4. Create a relationship between the 'Purchase Date' column in the 'Purchase' table and the 'Date' column in the 'Calendar' table.
+5. Create a Matrix visual. Add 'Quarter' and 'Month' from the 'Calendar' table to the Rows section.
+6. Apply a visual-level filter to the Matrix to show only figures for 'Calendar Year = 2019'.
+7. Create a base measure called `Total Sales` using `SUM( 'Purchase'[Quantity] )`.
+8. Create a new DAX measure called `QTD Sales` to display quarter-to-date sales figures, using either the `TOTALQTD` function or `CALCULATE` with `DATESQTD`.
+9. Create another new DAX measure called `Previous Quarter Sales` to show sales from the prior quarter, utilizing `CALCULATE` and `DATEADD`.
+10. Add `Total Sales`, `QTD Sales`, and `Previous Quarter Sales` to the Values section of your Matrix visual.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Total Sales = SUM( 'Purchase'[Quantity] )</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

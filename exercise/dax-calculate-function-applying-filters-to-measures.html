@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="DAX CALCULATE Function: Applying Filters to Measures">
+    <meta name="description" content="Learn to use the CALCULATE function in DAX to apply single and multiple filters to measures, including combining filter conditions with logical OR (||).">
+    <meta property="og:title" content="DAX CALCULATE Function: Applying Filters to Measures">
+    <meta property="og:description" content="Learn to use the CALCULATE function in DAX to apply single and multiple filters to measures, including combining filter conditions with logical OR (||).">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/dax-calculate-function-applying-filters-to-measures.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/dax-calculate-function-applying-filters-to-measures.html">
+    <title>DAX CALCULATE Function: Applying Filters to Measures</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>DAX CALCULATE Function: Applying Filters to Measures</h1>
+    <h3>🧮 Function: CALCULATE</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        The CALCULATE function is one of the most powerful and frequently used functions in DAX. It evaluates an expression in a modified filter context. You can pass one or more filters as arguments after the expression. Each filter modifies or overrides the existing filter context for the evaluation of the expression. When multiple filters are provided, they are combined with a logical AND by default. To combine filters with a logical OR, you use the '||' operator within a single filter argument.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            Alright class, let's talk about `CALCULATE`, the absolute cornerstone of DAX – if you master this function, you'll unlock Power BI's full potential.  As an analyst, you'll extensively use `CALCULATE` to manipulate filter context, allowing you to answer targeted business questions regardless of what's currently selected in your report. For instance, you can use it to calculate Sales for the Electronics category even when a visual is filtered by Region, or to find Total Sales for All Products to compare against a specific product's performance, making it indispensable for comparative analysis and advanced business logic.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1.  Download and unzip the provided file, then open 'Tallest Buildings - Calculate Basic Filters.pbix' in Power BI Desktop.
+2.  Locate the matrix visual which currently displays countries and the 'Count Buildings' measure.
+3.  Create a new measure in the 'Building Measures' table called `Count Old Buildings`. Use the CALCULATE function to count buildings where the 'Year Opened' field is less than 2000. 
+    *   *Hint: CALCULATE ( Expression, Filter )*
+4.  Create another new measure called `% Old Buildings`. This measure should divide `Count Old Buildings` by `Count Buildings`.
+5.  Add both `Count Old Buildings` and `% Old Buildings` to the matrix visual. Apply appropriate formatting (e.g., percentage format for `% Old Buildings`).
+6.  Create a new measure named `Count Old Tall Buildings`. Use the CALCULATE function to apply two filters:
+    *   Filter 1: 'Year Opened' is less than 2000.
+    *   Filter 2: 'Height m' is greater than or equal to 400.
+    *   *Remember: Multiple filters in CALCULATE are comma-separated.* 
+7.  Display `Count Old Tall Buildings` in the matrix visual.
+8.  Modify the `Count Old Tall Buildings` measure to change the second filter. It should now check if 'Height m' is greater than or equal to 400 OR 'Floors above ground' is greater than or equal to 100.
+    *   *Use the '||' operator for the OR condition.*
+9.  Check the results of your changes in the matrix visual.
+10. Save and close the file.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Count Buildings = COUNTROWS('Buildings')</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

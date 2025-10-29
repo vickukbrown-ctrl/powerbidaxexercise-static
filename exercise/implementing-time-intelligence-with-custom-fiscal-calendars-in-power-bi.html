@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Implementing Time Intelligence with Custom Fiscal Calendars in Power BI">
+    <meta name="description" content="Learn to create year-to-date time intelligence measures in DAX, correctly configuring them to respect a custom fiscal year ending on March 31st.">
+    <meta property="og:title" content="Implementing Time Intelligence with Custom Fiscal Calendars in Power BI">
+    <meta property="og:description" content="Learn to create year-to-date time intelligence measures in DAX, correctly configuring them to respect a custom fiscal year ending on March 31st.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/implementing-time-intelligence-with-custom-fiscal-calendars-in-power-bi.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/implementing-time-intelligence-with-custom-fiscal-calendars-in-power-bi.html">
+    <title>Implementing Time Intelligence with Custom Fiscal Calendars in Power BI</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Implementing Time Intelligence with Custom Fiscal Calendars in Power BI</h1>
+    <h3>🧮 Function: TOTALYTD</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        The TOTALYTD function calculates a year-to-date expression, allowing for an optional 'year_end_date' parameter. This parameter is crucial when dealing with fiscal years that do not align with the standard calendar year (January 1st to December 31st). By specifying the fiscal year end (e.g., '3/31' for March 31st), TOTALYTD correctly resets the year-to-date calculation at the end of each fiscal period. This relies on a properly marked date table in your model.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            The `TOTALYTD` function is essential for calculating a running total of a measure from the beginning of the current year up to the date currently in context. Analysts frequently use it to track cumulative performance metrics like Year-to-Date Sales, Year-to-Date Revenue, or Year-to-Date Expenses, which are crucial for assessing progress against annual targets or comparing current performance to previous years. It simplifies time intelligence, providing immediate insight into overall cumulative achievement within the fiscal period.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Total Tracks = COUNT('Track'[Track Name])</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

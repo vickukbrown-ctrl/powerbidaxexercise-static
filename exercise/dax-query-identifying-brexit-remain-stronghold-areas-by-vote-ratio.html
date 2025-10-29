@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="DAX Query: Identifying Brexit 'Remain' Stronghold Areas by Vote Ratio">
+    <meta name="description" content="Learn to write a DAX query using EVALUATE to filter and order data based on a calculated ratio between 'Remain' and 'Leave' votes.">
+    <meta property="og:title" content="DAX Query: Identifying Brexit 'Remain' Stronghold Areas by Vote Ratio">
+    <meta property="og:description" content="Learn to write a DAX query using EVALUATE to filter and order data based on a calculated ratio between 'Remain' and 'Leave' votes.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/dax-query-identifying-brexit-remain-stronghold-areas-by-vote-ratio.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/dax-query-identifying-brexit-remain-stronghold-areas-by-vote-ratio.html">
+    <title>DAX Query: Identifying Brexit 'Remain' Stronghold Areas by Vote Ratio</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>DAX Query: Identifying Brexit 'Remain' Stronghold Areas by Vote Ratio</h1>
+    <h3>🧮 Function: EVALUATE, FILTER, ORDER BY</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        DAX queries, executed in tools like DAX Studio, allow you to retrieve and manipulate data directly from your Power BI data model. The `EVALUATE` statement is fundamental for running queries, returning a table expression. The `FILTER` function lets you specify conditions to include or exclude rows, while `ORDER BY` sorts the results based on one or more columns in ascending or descending order. This exercise combines these to find specific data patterns.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As an analyst, when you need to quickly inspect or debug a specific subset of your data model, you'll use `EVALUATE` to run a table query. Within this query, `FILTER` allows you to precisely narrow down the results to only the rows meeting specific conditions—like overdue customer orders—while `ORDER BY` ensures those results are presented in a logical sequence for easy review, such as sorting by the oldest due date first. This combination is invaluable for ad-hoc data exploration and validating complex table expressions.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1. Download and unzip the provided Power BI file.
+2. Open the Power BI Desktop file and connect to it using DAX Studio.
+3. In DAX Studio, write a DAX query using `EVALUATE` that lists out all areas where the 'Remain' vote was more than three times the 'Leave' vote.
+4. Order the results in descending order by the 'Remain' votes.
+5. Save your query as `Remain strongholds.dax`.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">EVALUATE
+CALCULATETABLE(
+    'YourTableName'
+)</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

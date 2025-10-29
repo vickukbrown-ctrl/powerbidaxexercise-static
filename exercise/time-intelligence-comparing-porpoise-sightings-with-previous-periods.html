@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Time Intelligence: Comparing Porpoise Sightings with Previous Periods">
+    <meta name="description" content="Learn to use fundamental DAX time intelligence functions like PREVIOUSMONTH and DATEADD to compare current period data with previous periods, enhancing temporal analysis in Power BI.">
+    <meta property="og:title" content="Time Intelligence: Comparing Porpoise Sightings with Previous Periods">
+    <meta property="og:description" content="Learn to use fundamental DAX time intelligence functions like PREVIOUSMONTH and DATEADD to compare current period data with previous periods, enhancing temporal analysis in Power BI.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/time-intelligence-comparing-porpoise-sightings-with-previous-periods.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/time-intelligence-comparing-porpoise-sightings-with-previous-periods.html">
+    <title>Time Intelligence: Comparing Porpoise Sightings with Previous Periods</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Time Intelligence: Comparing Porpoise Sightings with Previous Periods</h1>
+    <h3>🧮 Function: PREVIOUSMONTH, DATEADD</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        DAX Time Intelligence functions allow for calculations across different time periods (e.g., year-to-date, previous month, same period last year) when a properly configured Date table is present. PREVIOUSMONTH is a specialized time intelligence function that shifts the context back by exactly one month. DATEADD is a more general-purpose time intelligence function that allows you to shift the context by a specified number of intervals (e.g., days, months, years) forward or backward.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As an analyst, you'll frequently need to compare current performance against a prior period to understand trends and identify anomalies. `PREVIOUSMONTH` is your go-to for straightforward month-over-month comparisons, like calculating sales from the immediate prior month. In contrast, `DATEADD` provides the flexibility to shift your time context by any interval—days, months, quarters, or years—to analyze performance against *any* historical period, such as year-over-year sales growth.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Harbour Porpoise Sightings = 
+CALCULATE(
+    SUM('Sightings'[Count]),
+    'Sightings'[Species] = "Harbour Porpoise"
+)</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Calculating Cumulative Totals Over Dates Using FILTER and EARLIER">
+    <meta name="description" content="Understand and apply the FILTER and EARLIER functions to create a cumulative total over a date column in Power BI, and explore an alternative approach using variables.">
+    <meta property="og:title" content="Calculating Cumulative Totals Over Dates Using FILTER and EARLIER">
+    <meta property="og:description" content="Understand and apply the FILTER and EARLIER functions to create a cumulative total over a date column in Power BI, and explore an alternative approach using variables.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/calculating-cumulative-totals-over-dates-using-filter-and-earlier.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/calculating-cumulative-totals-over-dates-using-filter-and-earlier.html">
+    <title>Calculating Cumulative Totals Over Dates Using FILTER and EARLIER</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Calculating Cumulative Totals Over Dates Using FILTER and EARLIER</h1>
+    <h3>🧮 Function: FILTER, EARLIER, VAR</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        Cumulative totals are essential for trend analysis. The EARLIER function is crucial in row context operations, especially within iterators like FILTER, to reference a value from an outer row context. When calculating a cumulative total, EARLIER allows you to compare the current row's date with all previous dates in the table, enabling the aggregation of values up to the current point in time. The FILTER function then narrows down the table to only include rows that meet the cumulative condition.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As a DAX analyst, you'll frequently use `FILTER`, `EARLIER`, and `VAR` together for advanced row-level comparisons, like calculating how many other products in the *same category* have a *higher profit margin* than the current product. Here, `FILTER` allows you to iterate through relevant rows (other products in the same category), `EARLIER` is crucial for referencing the current product's profit margin within that iteration for comparison, and `VAR` can store this current margin, making the expression cleaner, more readable, and often more performant.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1. Download and unzip the provided Power BI file.
+2. Open the 'Oscars.pbix' file in Power BI Desktop.
+3. Locate the 'Cumulative Oscars' calculated column, which is currently blank.
+4. Modify the 'Cumulative Oscars' calculated column using the FILTER and EARLIER functions to correctly calculate the running total of 'Oscars Won' up to each film's 'Release Date'.
+5. Sort the table by 'Release Date' to visually confirm the cumulative total is correct.
+6. Create a *second* calculated column named 'Cumulative Oscars (VAR)' that achieves the same cumulative total without using EARLIER, instead storing each film's 'Release Date' in a variable.
+7. Save the Power BI file as 'Oscar inflation.pbix'.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Cumulative Oscars = BLANK()</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Implementing Conditional Logic with IF and SWITCH for Calculated Columns in Power BI">
+    <meta name="description" content="Learn to create calculated columns in Power BI using DAX conditional functions like IF and SWITCH to categorize data and handle missing values based on specific criteria.">
+    <meta property="og:title" content="Implementing Conditional Logic with IF and SWITCH for Calculated Columns in Power BI">
+    <meta property="og:description" content="Learn to create calculated columns in Power BI using DAX conditional functions like IF and SWITCH to categorize data and handle missing values based on specific criteria.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/implementing-conditional-logic-with-if-and-switch-for-calculated-columns-in-power-bi.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/implementing-conditional-logic-with-if-and-switch-for-calculated-columns-in-power-bi.html">
+    <title>Implementing Conditional Logic with IF and SWITCH for Calculated Columns in Power BI</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Implementing Conditional Logic with IF and SWITCH for Calculated Columns in Power BI</h1>
+    <h3>🧮 Function: IF, SWITCH, ISBLANK</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        DAX conditional functions, such as IF and SWITCH, are essential for creating dynamic calculated columns. The IF function evaluates a logical test and returns one value if true and another if false. The SWITCH function, particularly when used with TRUE() as its first argument, allows for a series of logical tests to assign categories based on multiple conditions or ranges. ISBLANK is useful for checking if a column's value is null or empty, enabling handling of missing data.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As a DAX analyst, you'd frequently combine `IF`, `SWITCH`, and `ISBLANK` to create robust classification columns, enabling dynamic categorization and enhanced data analysis. For instance, you could use `ISBLANK` within an `IF` statement to first identify if a `[Completion Date]` is missing, labeling those records as 'Pending'. Subsequently, a `SWITCH(TRUE(), ...)` statement could categorize the completed records into 'On-Time', 'Delayed', or 'Expedited' based on various metrics, providing flexible and actionable insights into operational efficiency.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1. Download and unzip the 'Tallest buildings - Conditional Functions.pbix' file.
+2. Open the .pbix file and switch to the Table view of the 'Building' table.
+3. Add a new calculated column named 'Has basement' that returns "No" if the 'Floors below ground' column equals 0, and "Yes" otherwise.
+4. Create a matrix visual to display the number of buildings that do or do not have a basement.
+5. Add another calculated column named 'Century' that returns "20th Century" if the 'Opened' year is before 2001, and "21st Century" otherwise.
+6. Use a matrix visual to display the count of buildings for each century.
+7. Create a calculated column named 'Size' using the SWITCH(TRUE()) function to categorize buildings by 'Height m': "Tiny" (less than 400m), "Small" (400m to less than 500m), "Medium" (500m to less than 600m), "Big" (600m to less than 700m), and "Massive" (700m or more).
+8. Create a chart visual to show the number of buildings and the average of total floors for each 'Size' category.
+9. Create a calculated column named 'Location' that returns "Unknown location" if the 'Coordinates' column is blank, otherwise it returns the value of the 'Coordinates' column.
+10. Save and close the Power BI file.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">New Column = 
+// Your DAX expression here
+</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

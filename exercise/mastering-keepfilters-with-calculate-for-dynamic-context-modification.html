@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Mastering KEEPFILTERS with CALCULATE for Dynamic Context Modification">
+    <meta name="description" content="Understand and apply the KEEPFILTERS function within CALCULATE to precisely control filter context for inclusion and exclusion scenarios, and to define conditional logic in Power BI visuals.">
+    <meta property="og:title" content="Mastering KEEPFILTERS with CALCULATE for Dynamic Context Modification">
+    <meta property="og:description" content="Understand and apply the KEEPFILTERS function within CALCULATE to precisely control filter context for inclusion and exclusion scenarios, and to define conditional logic in Power BI visuals.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/mastering-keepfilters-with-calculate-for-dynamic-context-modification.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/mastering-keepfilters-with-calculate-for-dynamic-context-modification.html">
+    <title>Mastering KEEPFILTERS with CALCULATE for Dynamic Context Modification</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Mastering KEEPFILTERS with CALCULATE for Dynamic Context Modification</h1>
+    <h3>🧮 Function: KEEPFILTERS, CALCULATE</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        KEEPFILTERS is a DAX function that modifies the filter behavior of CALCULATE. When used within a CALCULATE function's filter arguments, KEEPFILTERS ensures that existing filters in the filter context are preserved and combined with the new filters specified within CALCULATE, rather than being overwritten. This allows for additive filtering, enabling scenarios where you want to add a filter while respecting what is already filtered, or selectively include/exclude items based on specific conditions without fully overriding the visual's context.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            Alright class, let's talk about how `KEEPFILTERS` and `CALCULATE` work together to solve real-world analytical problems.  You'll primarily use `CALCULATE` to modify filter context, for example, to calculate `Total Sales` specifically for 'Online' channels. However, if you need to apply this 'Online' channel filter *in addition to* other existing filters already present (like a selected Region or Year from your slicers), `KEEPFILTERS` becomes essential. It ensures `CALCULATE` *intersects* its new filter with the current filter context, rather than overwriting it, so you accurately see 'Online Sales' *only within your existing report selections*.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1.  Download and unzip the provided 'Music Tours - Calculate Keep Filters.pbix' file.
+2.  Open the PBIX file in Power BI Desktop.
+3.  Navigate to Page 1 of the report. Observe the existing bar chart displaying the average peak chart position for albums by different artists.
+4.  Create a new measure called `Average Peak Position`. Define it as `AVERAGEX('Albums', 'Albums'[Peak Chart Position])`.
+5.  Create a new measure named `Average Peak Position - Selected Artists`. This measure should use `CALCULATE` and `KEEPFILTERS` to show the average peak chart position for any three artists of your choice. Refer to the `dax_code` section for an example.
+6.  Replace the current measure in the existing bar chart on Page 1 with your newly created `Average Peak Position - Selected Artists` measure.
+7.  Create another measure named `Average Peak Position - Excluded Artists`. This measure should use `CALCULATE` and `KEEPFILTERS` to show the average peak chart position, explicitly excluding any three artists of your choice. Refer to the `dax_code` section for an example.
+8.  Create a *new* bar chart on Page 1. Add the 'Artist' field to the Axis and your `Average Peak Position - Excluded Artists` measure to the Values.
+9.  Navigate to Page 2 of the report. You will find a line chart showing the percentage of cancelled shows per year.
+10. Assume there's an existing base measure `[Percentage of Cancelled Shows]`.
+11. Create three new measures to represent the percentage of cancelled shows for specific periods: `Cancelled Shows Pre-COVID` (up to and including 2020), `Cancelled Shows During COVID` (2020 to 2022 inclusive), and `Cancelled Shows Post-COVID` (2022 or later). Use `CALCULATE` with appropriate date filters for each. Refer to the `dax_code` section for examples.
+12. Add these three new measures to the line chart on Page 2, replacing the original `[Percentage of Cancelled Shows]` measure. This will create three distinct lines.
+13. Apply formatting to the lines (e.g., different colors, styles) for the three series to visually distinguish the Pre-COVID, During COVID, and Post-COVID periods.
+14. Save and close the report.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Average Peak Position = AVERAGEX('Albums', 'Albums'[Peak Chart Position])</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

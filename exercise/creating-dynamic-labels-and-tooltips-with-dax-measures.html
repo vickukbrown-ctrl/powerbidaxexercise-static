@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Creating Dynamic Labels and Tooltips with DAX Measures">
+    <meta name="description" content="Learn to create dynamic labels for card visuals and detailed tooltips for charts using various DAX functions to enhance report interactivity and user experience.">
+    <meta property="og:title" content="Creating Dynamic Labels and Tooltips with DAX Measures">
+    <meta property="og:description" content="Learn to create dynamic labels for card visuals and detailed tooltips for charts using various DAX functions to enhance report interactivity and user experience.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/creating-dynamic-labels-and-tooltips-with-dax-measures.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/creating-dynamic-labels-and-tooltips-with-dax-measures.html">
+    <title>Creating Dynamic Labels and Tooltips with DAX Measures</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Creating Dynamic Labels and Tooltips with DAX Measures</h1>
+    <h3>🧮 Function: VALUES, CONCATENATEX, SELECTEDVALUE, RELATED, SUMMARIZE</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        DAX measures can return text strings that dynamically change based on user selections and visual context within a Power BI report. This allows for personalized labels on card visuals (e.g., showing the name of a selected item) and rich, context-aware tooltips for charts. Key functions include `SELECTEDVALUE` for retrieving a single selected value, `CONCATENATEX` for iterating over a table and concatenating values into a single string (often with formatting and conditional logic), and `RELATED` or `RELATEDTABLE` for accessing data from related tables within the iteration.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            To provide a comprehensive customer activity report, you'd `SUMMARIZE` sales by `[Customer Name]` to calculate their total purchases. Within this summary, `CONCATENATEX` paired with `VALUES` could display a unique, comma-separated list of `[Product Categories]` purchased, even retrieving `[Supplier Name]` using `RELATED` from a dimension table to show their preferred vendors. Finally, `SELECTEDVALUE` would dynamically update your report title to reflect the currently selected customer, enhancing interactivity for the end-user.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1.  Download and unzip the provided 'Music Tours - Dynamic Labels.pbix' file and open it in Power BI Desktop.
+2.  Create a measure named `Selected Artist Name` that returns the name of the currently selected artist.
+3.  Create a card visual at the top of both the 'Albums' and 'Tours' pages and assign the `Selected Artist Name` measure to them. Format the cards to align with existing text boxes.
+4.  Create a measure named `Album Tooltip Details` that lists album titles along with their year of release, sorted by release date, with each album on a new line (use `UNICHAR(10)`).
+5.  Assign the `Album Tooltip Details` measure to the tooltips of the pie chart on the 'Albums' page.
+6.  Create a measure named `Track Tooltip Details` that lists track names, sorted by the `Track order` column. Add a gold star emoji (Windows key + '.') next to tracks which reached number 1 in the US Billboard Hot 100 chart.
+7.  Assign the `Track Tooltip Details` measure to the tooltips of the column chart on the 'Albums' page.
+8.  Create a measure named `Tour Tooltip Details` that lists show dates and venues, sorted by show date and separated by a new line. The `RELATED` function may be useful here.
+9.  Assign the `Tour Tooltip Details` measure to the tooltips of the column chart on the 'Tours' page.
+10. Create a measure named `Country Show Counts Tooltip` that lists countries and the count of shows performed in them. Separate each country with a new line, sort them alphabetically, and ensure only countries with actual shows are included. Use the existing `Count Shows` measure if available.
+11. Assign the `Country Show Counts Tooltip` measure to the tooltips of the pie chart on the 'Tours' sheet.
+12. Save and close the report.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">-- To create a new measure, right-click on your table in the Fields pane and select 'New measure'.
+-- Replace 'Your Measure Name' with a descriptive name and the 'BLANK()' with your DAX formula.
+
+Your Measure Name = 
+    BLANK()</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Leveraging USERELATIONSHIP for Multiple Inactive Date Relationships">
+    <meta name="description" content="To learn how to use the USERELATIONSHIP function to activate inactive relationships in DAX, allowing for flexible date-based calculations on a single date dimension.">
+    <meta property="og:title" content="Leveraging USERELATIONSHIP for Multiple Inactive Date Relationships">
+    <meta property="og:description" content="To learn how to use the USERELATIONSHIP function to activate inactive relationships in DAX, allowing for flexible date-based calculations on a single date dimension.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/leveraging-userelationship-for-multiple-inactive-date-relationships.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/leveraging-userelationship-for-multiple-inactive-date-relationships.html">
+    <title>Leveraging USERELATIONSHIP for Multiple Inactive Date Relationships</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Leveraging USERELATIONSHIP for Multiple Inactive Date Relationships</h1>
+    <h3>🧮 Function: USERELATIONSHIP, CALCULATE, COUNTROWS</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        In Power BI, when you have multiple relationships between two tables (e.g., a 'Staff' table and a 'Calendar' table, linked by 'DateBorn' and 'DateJoined'), only one can be active at a time. The active relationship is used by default in calculations. Inactive relationships are represented by dashed lines in the model view. The USERELATIONSHIP function allows you to temporarily activate a specific inactive relationship within the filter context of a CALCULATE function. This enables you to perform calculations based on different date perspectives (like birth dates versus join dates) using the same central calendar table, avoiding the need for duplicate date tables in your model.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As a Power BI analyst, you'll frequently encounter scenarios where you need to analyze data using an *inactive* relationship in your model, such as counting orders by `Ship Date` rather than the active `Order Date`. In these cases, you'll use `CALCULATE` as your filter context modifier, with `USERELATIONSHIP` temporarily activating the `Ship Date` relationship for the duration of the calculation. Finally, `COUNTROWS` will precisely count the individual orders based on this dynamically activated `Ship Date` filter, enabling flexible multi-perspective date analysis without duplicating your Date table.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Number of Joiners = COUNTROWS('Staff')</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

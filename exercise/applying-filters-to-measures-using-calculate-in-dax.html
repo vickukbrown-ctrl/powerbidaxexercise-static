@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Applying Filters to Measures Using CALCULATE in DAX">
+    <meta name="description" content="Create robust measures using CALCULATE to apply various filters and calculate conditional aggregations, such as percentages based on venue status, show cancellations, and ticket sales.">
+    <meta property="og:title" content="Applying Filters to Measures Using CALCULATE in DAX">
+    <meta property="og:description" content="Create robust measures using CALCULATE to apply various filters and calculate conditional aggregations, such as percentages based on venue status, show cancellations, and ticket sales.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/applying-filters-to-measures-using-calculate-in-dax.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/applying-filters-to-measures-using-calculate-in-dax.html">
+    <title>Applying Filters to Measures Using CALCULATE in DAX</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Applying Filters to Measures Using CALCULATE in DAX</h1>
+    <h3>🧮 Function: CALCULATE, CONTAINSSTRING, DIVIDE, ISBLANK</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        The CALCULATE function is one of the most powerful and versatile functions in DAX. It evaluates an expression in a modified filter context. This modification allows you to override existing filters or add new ones, enabling advanced calculations like 'percentage of total' or conditional aggregations based on specific criteria that might not be present in the initial visual's filter context.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            Here are real-world use cases for the specified DAX functions:  *   CALCULATE: As the most powerful function in DAX, `CALCULATE` allows you to modify filter context to perform highly specific comparative analysis. For instance, you'd use it to compare current year sales against previous year sales, or to analyze a specific product category's performance regardless of the current page filters.  *   CONTAINSSTRING: `CONTAINSSTRING` is invaluable for text analysis, letting you efficiently check if a text string contains another substring, case-insensitively. A common application is dynamically categorizing products or customer feedback by searching for keywords within their descriptions or comment fields.  *   DIVIDE: `DIVIDE` is your go-to function for robust ratio and percentage calculations, such as profit margins or conversion rates. It safely handles division by zero by returning an optional alternate result (or BLANK by default), preventing errors that standard division might cause and ensuring stable reports.  *   ISBLANK: `ISBLANK` is essential for data quality and conditional logic, enabling you to check if a value is blank. You'd use it to provide default values when data is missing (e.g., a missing discount should be 0), or to identify incomplete records for cleanup, ensuring your calculations and reports are accurate.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">CALCULATE(
+    [Your Base Measure],
+    <Table or Column Filter Expression>
+)</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Calculating Building Statistics with Basic DAX Measures">
+    <meta name="description" content="Learn to write fundamental DAX measures using aggregation functions like SUM, AVERAGE, MAX, MIN, and iterator functions like SUMX and AVERAGEX, to calculate various statistics.">
+    <meta property="og:title" content="Calculating Building Statistics with Basic DAX Measures">
+    <meta property="og:description" content="Learn to write fundamental DAX measures using aggregation functions like SUM, AVERAGE, MAX, MIN, and iterator functions like SUMX and AVERAGEX, to calculate various statistics.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/calculating-building-statistics-with-basic-dax-measures.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/calculating-building-statistics-with-basic-dax-measures.html">
+    <title>Calculating Building Statistics with Basic DAX Measures</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Calculating Building Statistics with Basic DAX Measures</h1>
+    <h3>🧮 Function: SUM, AVERAGE, MAX, MIN, SUMX, AVERAGEX</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        Basic DAX aggregation functions (SUM, AVERAGE, MAX, MIN) operate directly on a column's values. Iterator functions (SUMX, AVERAGEX) are more powerful, allowing calculations to be performed row by row within a specified table before aggregating the results. This enables more complex calculations that involve multiple columns.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            Alright class, let's look at how these fundamental DAX functions are used every day to gain insights from our data.  ### SUM When you need to calculate the *total* of a numerical column, like the `Total Sales Amount` or `Total Units Sold`, `SUM` is your go-to function. It quickly aggregates all values within the current filter context to provide a grand total, which is essential for reporting key performance indicators.  ### AVERAGE To understand the *typical* value of a measure, such as the `Average Order Value` or `Average Product Rating`, `AVERAGE` provides the arithmetic mean of a column. This helps identify central tendencies and benchmark performance across different segments.  ### MAX If you need to identify the *highest* value in a column, perhaps the `Highest Sale Price` achieved or the `Maximum Temperature` recorded, `MAX` is essential. It highlights extreme values, which can be critical for outlier analysis or identifying peak performance.  ### MIN Conversely, to find the *lowest* value, like the `Minimum Profit Margin` or the `Lowest Delivery Time`, `MIN` is used. This helps in understanding bottom-end performance, identifying bottlenecks, or recognizing pricing floors.  ---  Now, let's explore their more powerful X counterparts, which are crucial when calculations need to happen *before* aggregation.  ### SUMX When your aggregation requires a *row-by-row calculation* before summing, like calculating `Total Revenue (Quantity * Price)` across a sales table, `SUMX` is indispensable. It iterates over each row, evaluates an expression for that row, and then sums the results, enabling precise aggregations for complex scenarios.  ### AVERAGEX Similarly, `AVERAGEX` is used when you need to calculate the *average of a row-level expression*, such as the `Average Profit Margin per Transaction (Profit / Revenue)`. It iterates through each row of a specified table, calculates the expression for each, and then averages those individual results, providing a more nuanced average.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">New measure name = </pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

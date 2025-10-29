@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Filtering Data with Multiple Criteria using DAX">
+    <meta name="description" content="Learn how to use the FILTER function with multiple criteria (AND operator) to selectively sum data in Power BI, building on basic SUMX measures.">
+    <meta property="og:title" content="Filtering Data with Multiple Criteria using DAX">
+    <meta property="og:description" content="Learn how to use the FILTER function with multiple criteria (AND operator) to selectively sum data in Power BI, building on basic SUMX measures.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/filtering-data-with-multiple-criteria-using-dax.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/filtering-data-with-multiple-criteria-using-dax.html">
+    <title>Filtering Data with Multiple Criteria using DAX</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Filtering Data with Multiple Criteria using DAX</h1>
+    <h3>🧮 Function: SUMX, FILTER, YEAR, AND (or && operator)</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        The FILTER function is a table function that returns a subset of a table or another expression's result. When combined with an iterator function like SUMX, it allows for calculating expressions over specific rows. Multiple conditions can be combined within FILTER using logical operators like AND (or the && operator) to define precise criteria for row selection before the calculation takes place.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As an analyst, you'd leverage these functions together to perform highly specific, row-level aggregations. For example, you might use `SUMX` to calculate the total profit for sales transactions, applying a `FILTER` to narrow down only those orders that occurred in a specific `YEAR` (e.g., `YEAR([OrderDate]) = 2022`) `AND` (or `&&`) belonged to a particular product category, enabling precise performance analysis under multiple conditions.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Sales = SUMX('Purchase', 'Purchase'[Quantity] * 'Purchase'[Price])</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

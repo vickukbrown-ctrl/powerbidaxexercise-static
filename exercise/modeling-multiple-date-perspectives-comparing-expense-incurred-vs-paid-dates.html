@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Modeling Multiple Date Perspectives: Comparing Expense Incurred vs. Paid Dates">
+    <meta name="description" content="Learn to model a Power BI dataset with multiple date tables to analyze different date contexts (e.g., expense incurred date vs. paid date) simultaneously within the same report.">
+    <meta property="og:title" content="Modeling Multiple Date Perspectives: Comparing Expense Incurred vs. Paid Dates">
+    <meta property="og:description" content="Learn to model a Power BI dataset with multiple date tables to analyze different date contexts (e.g., expense incurred date vs. paid date) simultaneously within the same report.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/modeling-multiple-date-perspectives-comparing-expense-incurred-vs-paid-dates.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/modeling-multiple-date-perspectives-comparing-expense-incurred-vs-paid-dates.html">
+    <title>Modeling Multiple Date Perspectives: Comparing Expense Incurred vs. Paid Dates</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Modeling Multiple Date Perspectives: Comparing Expense Incurred vs. Paid Dates</h1>
+    <h3>🧮 Function: Data Modeling for Date Comparison</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        When a fact table contains multiple date columns that need to be analyzed independently, standard Power BI modeling only allows one active relationship between a fact table and a single date dimension. To enable comparisons or analysis based on other date columns, you can add additional date dimension tables. These additional date tables can then be related to the fact table with active relationships, allowing different report visuals to be filtered by different date contexts. While a single date dimension with inactive relationships and the USERELATIONSHIP function is an alternative, using multiple active calendar tables simplifies visual interaction when comparing distinct date types.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            Alright class, let's talk about the bedrock of dynamic time-based analysis: Data Modeling for Date Comparison.  When you need to perform sophisticated date comparisons, such as analyzing year-over-year sales growth, comparing current inventory age against a target, or tracking project progress relative to deadlines, robust data modeling is your foundation. By establishing a dedicated Date Dimension table and connecting it to your fact tables via relevant date columns, you create the essential context. This setup empowers DAX time intelligence functions and custom calculations to effortlessly compare performance across different time periods, providing crucial, actionable insights into trends and variances.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Total Expenses = SUM( 'Expenses'[Amount] )</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

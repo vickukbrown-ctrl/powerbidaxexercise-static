@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Mastering Filter Context Modification with REMOVEFILTERS in DAX">
+    <meta name="description" content="Learn to effectively use the REMOVEFILTERS function within CALCULATE to modify or completely clear filter context for measures, enabling robust comparative analysis and consistent visual displays in Power BI.">
+    <meta property="og:title" content="Mastering Filter Context Modification with REMOVEFILTERS in DAX">
+    <meta property="og:description" content="Learn to effectively use the REMOVEFILTERS function within CALCULATE to modify or completely clear filter context for measures, enabling robust comparative analysis and consistent visual displays in Power BI.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/mastering-filter-context-modification-with-removefilters-in-dax.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/mastering-filter-context-modification-with-removefilters-in-dax.html">
+    <title>Mastering Filter Context Modification with REMOVEFILTERS in DAX</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Mastering Filter Context Modification with REMOVEFILTERS in DAX</h1>
+    <h3>🧮 Function: REMOVEFILTERS, CALCULATE</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        The REMOVEFILTERS function, typically used as a modifier within CALCULATE, allows you to clear filters from tables or columns. When REMOVEFILTERS() is used without any arguments, it removes all filters from the entire table. When specific columns are passed as arguments (e.g., REMOVEFILTERS(Table[Column])), it clears filters only from those specified columns. This is crucial for creating measures that display values independent of the current visual's filter context, such as 'total sales' or 'average for all categories' for comparison purposes.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            Alright, let's look at `REMOVEFILTERS` and `CALCULATE` together.  Analysts frequently need to compare a filtered value against a grand total or an unfiltered base. `CALCULATE` is your primary tool for modifying filter context, and by incorporating `REMOVEFILTERS` within it, you can effectively clear existing filters for a specific part of your calculation. For instance, to calculate Percentage of Total Sales, you'd use `CALCULATE` with `REMOVEFILTERS` to get the unfiltered grand total sales, allowing you to accurately compare any specific product, region, or time period's sales against the company-wide aggregate.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Avg height = AVERAGE('Tallest Buildings'[Height (m)])
+Max height = MAX('Tallest Buildings'[Height (m)])</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Modifying Filter Context with DAX CALCULATE in Power BI">
+    <meta name="description" content="Understand and apply the DAX CALCULATE function to modify or replace existing filter contexts within Power BI visuals, using various filter conditions including logical operators and string functions.">
+    <meta property="og:title" content="Modifying Filter Context with DAX CALCULATE in Power BI">
+    <meta property="og:description" content="Understand and apply the DAX CALCULATE function to modify or replace existing filter contexts within Power BI visuals, using various filter conditions including logical operators and string functions.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/modifying-filter-context-with-dax-calculate-in-power-bi.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/modifying-filter-context-with-dax-calculate-in-power-bi.html">
+    <title>Modifying Filter Context with DAX CALCULATE in Power BI</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Modifying Filter Context with DAX CALCULATE in Power BI</h1>
+    <h3>🧮 Function: CALCULATE, CONTAINSSTRING, AVERAGEX, DIVIDE</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        The CALCULATE function is one of the most powerful and frequently used functions in DAX. It changes the context in which data is evaluated. Specifically, it can modify an existing filter context (by adding, overriding, or removing filters) to evaluate an expression. When a filter argument is provided, CALCULATE first removes any filters on the columns specified in the filter argument from the filter context and then applies the new filters specified by the arguments, effectively re-evaluating the expression under the new filter conditions.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As a Power BI analyst, you'll frequently combine these powerful DAX functions to derive deep insights:  To evaluate the effectiveness of targeted campaigns, an analyst might use `CALCULATE` to modify the filter context, allowing `CONTAINSSTRING` to identify specific promotional codes within order descriptions. Then, `AVERAGEX` iterates through these *filtered* promotional orders to precisely compute their average order value, providing insights into campaign performance. Furthermore, when calculating critical business ratios such as 'Average Discount Percentage per Sale' or 'Conversion Rate,' you would leverage `DIVIDE` to ensure robust calculations by safely handling potential division-by-zero scenarios, preventing errors and ensuring your metrics are always reliable.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1. Download and unzip the provided file 'Music Tours - Calculate Replace Filters.pbix'.
+2. Open the 'Music Tours - Calculate Replace Filters.pbix' file in Power BI Desktop.
+3. Navigate to Page 1 of the report, which displays a matrix of subgenres.
+4. Create a new measure named `Avg Track Length` to calculate the average track length in seconds. This requires multiplying 'Track'[Track mins] by 60 and adding 'Track'[Track secs] before averaging.
+5. Create another measure named `Avg track length vs. pop` that compares the `Avg Track Length` with the same value where the subgenre equals 'Pop'.
+6. Add both `Avg Track Length` and `Avg track length vs. pop` to the matrix visual.
+7. Apply conditional formatting to `Avg track length vs. pop` if desired.
+8. Create a measure named `Avg track length vs. pop or rock` that compares the average track length for subgenres that are either 'Pop' or 'Rock'.
+9. Create a measure named `Avg track length vs. all pop or rock` that compares the average track length for subgenres containing the word 'Pop' or 'Rock' (using `CONTAINSSTRING`).
+10. Add these new measures to the matrix on Page 1 and apply conditional formatting as desired.
+11. Navigate to Page 2 of the report, which displays a chart showing the percentage of cancelled shows by year.
+12. Create a base measure `Total Shows` to count all shows.
+13. Create a base measure `Cancelled Shows` to count only cancelled shows.
+14. Create a base measure `% Cancelled Shows` to calculate the percentage of cancelled shows using `DIVIDE`.
+15. Create a new measure named `% Cancelled (2020 or 2021)` to calculate the percentage of cancelled shows specifically for the years 2020 or 2021.
+16. Create another measure named `% Cancelled (Excl. 2020 or 2021)` to calculate the percentage of cancelled shows excluding the years 2020 and 2021.
+17. Add `% Cancelled (2020 or 2021)` and `% Cancelled (Excl. 2020 or 2021)` to the Y-axis bucket of the chart on Page 2.
+18. Observe the difference in percentages on the chart.
+19. Save and close the report.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Avg Track Length = 
+AVERAGEX(
+    'Track',
+    'Track'[Track mins] * 60 + 'Track'[Track secs]
+)</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

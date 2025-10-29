@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Calculating Ratios with CALCULATE and ALL in Premier League Data">
+    <meta name="description" content="Learn to calculate different types of ratios and proportions by dynamically modifying filter contexts using the CALCULATE and ALL DAX functions, applying these concepts to Premier League results data.">
+    <meta property="og:title" content="Calculating Ratios with CALCULATE and ALL in Premier League Data">
+    <meta property="og:description" content="Learn to calculate different types of ratios and proportions by dynamically modifying filter contexts using the CALCULATE and ALL DAX functions, applying these concepts to Premier League results data.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/calculating-ratios-with-calculate-and-all-in-premier-league-data.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/calculating-ratios-with-calculate-and-all-in-premier-league-data.html">
+    <title>Calculating Ratios with CALCULATE and ALL in Premier League Data</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Calculating Ratios with CALCULATE and ALL in Premier League Data</h1>
+    <h3>🧮 Function: CALCULATE, ALL, DIVIDE, SUM</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        The CALCULATE function is a foundational DAX function that allows you to change the filter context for a specific expression. It's crucial for creating advanced metrics like ratios, percentages of totals, and 'what-if' analyses. By combining CALCULATE with functions like ALL, you can remove existing filters from a column or table, enabling calculations that reference a grand total or a specific subset of data regardless of current visual filters. This exercise demonstrates how to remove filters for an overall total and how to apply new, specific filters for comparative analysis within CALCULATE.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            Alright class, let's tackle a classic scenario where these powerful functions come together!  As an analyst, you'll frequently use these functions together to calculate a 'Percent of Total' for key metrics, like sales. For instance, to find a Sales % of Total, you would `SUM` sales within the current filter context and then use `CALCULATE(SUM(Sales), ALL(Products))` to get the total sales *across all products* (removing any current product filters), finally employing `DIVIDE` to robustly handle the division and avoid errors.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1.  **Download Data**: Download and unzip the provided Excel file containing Premier League results.
+2.  **Load Data**: Create a new Power BI file and load both tables from the Excel workbook.
+3.  **Create Base Measure**: Create a new measure named `Total Points` to sum the points column.
+    ```dax
+    Total Points = SUM('Premier League Results'[Points])
+    ```
+4.  **Calculate Proportion of Total Points**: Create a new measure named `Proportion of Total Points`. This measure should divide `Total Points` for the current nationality by the `Total Points` for all nationalities (using `CALCULATE` with `ALL` to ignore the nationality filter).
+5.  **Calculate Ratio to English Managers' Points**: Create a new measure named `Ratio to English Managers`. This measure should divide `Total Points` for the current nationality by the `Total Points` scored by teams with English managers (using `CALCULATE` to apply a filter for 'England' as the manager nationality).
+6.  **Build Table Visual**: Create a new table visual in your report.
+7.  **Add Fields to Table**: Add `Manager Nationality` to the table. Then, add the `Total Points` measure, and the two new ratio measures (`Proportion of Total Points` and `Ratio to English Managers`) to the table.
+8.  **Format Measures**: Format `Proportion of Total Points` as a percentage and `Ratio to English Managers` to two decimal places.
+9.  **Save File**: Save your Power BI file as 'We miss Alex.pbix'.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Total Points = SUM('Premier League Results'[Points])</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

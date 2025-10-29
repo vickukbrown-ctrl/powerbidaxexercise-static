@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Calculating Win Ratio Using DAX Variables with Error Handling">
+    <meta name="description" content="Learn to calculate a ratio using DAX variables to improve readability and maintainability, while also implementing robust error handling for divide-by-zero scenarios.">
+    <meta property="og:title" content="Calculating Win Ratio Using DAX Variables with Error Handling">
+    <meta property="og:description" content="Learn to calculate a ratio using DAX variables to improve readability and maintainability, while also implementing robust error handling for divide-by-zero scenarios.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/calculating-win-ratio-using-dax-variables-with-error-handling.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/calculating-win-ratio-using-dax-variables-with-error-handling.html">
+    <title>Calculating Win Ratio Using DAX Variables with Error Handling</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Calculating Win Ratio Using DAX Variables with Error Handling</h1>
+    <h3>🧮 Function: VAR, SUM, DIVIDE</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        DAX variables (declared using the `VAR` keyword) allow you to store the result of an expression and reuse it multiple times within a single measure or calculated column. This significantly enhances formula readability, makes debugging easier, and can sometimes improve performance by avoiding redundant calculations. Variables are evaluated once for their scope and hold their value for the remainder of that scope.
+    </div>
+
+    
+    <div class="section">
+        <h2>🖼️ What You’ll Start With</h2>
+        <img src="https://api.powerbidaxexercise.com/api/files/exercises/jqoaxhz6lgz62kk/movie_nomination_power_bi_i_1st_zgqfkouw8g.PNG" alt="🖼️ What You’ll Start With">
+    </div>
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As a Power BI analyst, you'll frequently use `VAR` to define and store intermediate calculations, such as `Total Sales` (calculated with `SUM(Sales[Sales Amount])`) and `Total Cost` (using `SUM(Sales[Cost Amount])`), making your DAX code cleaner and more efficient. You would then leverage `DIVIDE` to safely calculate a final ratio, like `Total Sales` divided by `Total Cost` to determine a sales efficiency metric, ensuring your division gracefully handles any potential zero denominators.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        <ol>
+<li data-start="213" data-end="379">
+<p data-start="216" data-end="379"><strong data-start="216" data-end="235">Create measure:</strong> <em data-start="236" data-end="247">Win Ratio</em><br data-start="247" data-end="250"><em data-start="253" data-end="268">What it does:</em> Calculates how often an entry wins compared to its total nominations, using a safe division to prevent errors.</p>
+</li>
+<li data-start="381" data-end="473">
+<p data-start="384" data-end="473">Go to the <strong data-start="394" data-end="407">YourTable</strong> (or a similar table containing <em data-start="439" data-end="452">Nominations</em> and <em data-start="457" data-end="463">Wins</em> columns).</p>
+</li>
+<li data-start="475" data-end="685">
+<p data-start="478" data-end="685">Use DAX variables to <strong data-start="499" data-end="540">store the total number of Nominations</strong> and <strong data-start="545" data-end="569">total number of Wins</strong> before performing the calculation.<br data-start="604" data-end="607"><em data-start="610" data-end="616">Why:</em> Variables make the formula easier to read and calculate efficiently.</p>
+</li>
+<li data-start="687" data-end="925">
+<p data-start="690" data-end="925">Compute the <strong data-start="702" data-end="715">Win Ratio</strong> by dividing Wins by Nominations, but include an error-safe method so division by zero returns 0 instead of an error.<br data-start="832" data-end="835"><em data-start="838" data-end="845">Hint:</em> The safe divide function is designed to handle empty or zero values gracefully.</p>
+</li>
+<li data-start="927" data-end="1078">
+<p data-start="930" data-end="973">Add a <strong data-start="936" data-end="952">Table Visual</strong> with these fields:</p>
+<ul data-start="977" data-end="1078">
+<li data-start="977" data-end="1020">
+<p data-start="979" data-end="1020"><strong data-start="979" data-end="999">Category or Name</strong> (to group results)</p>
+</li>
+<li data-start="1024" data-end="1036">
+<p data-start="1026" data-end="1036"><strong data-start="1026" data-end="1034">Wins</strong></p>
+</li>
+<li data-start="1040" data-end="1059">
+<p data-start="1042" data-end="1059"><strong data-start="1042" data-end="1057">Nominations</strong></p>
+</li>
+<li data-start="1063" data-end="1078">
+<p data-start="1065" data-end="1078"><strong data-start="1065" data-end="1078">Win Ratio</strong></p>
+</li>
+</ul>
+</li>
+<li data-start="1080" data-end="1148">
+<p data-start="1083" data-end="1148">Format <strong data-start="1090" data-end="1103">Win Ratio</strong> as a <strong data-start="1109" data-end="1123">percentage</strong> with two decimal places.</p>
+</li>
+<li data-start="1150" data-end="1257">
+<p data-start="1153" data-end="1257">Test the measure by checking a row where <em data-start="1194" data-end="1211">Nominations = 0</em> &mdash; the ratio should show <strong data-start="1236" data-end="1242">0%</strong>, not an error.</p>
+</li>
+<li data-start="1259" data-end="1279">
+<p data-start="1262" data-end="1279">Save your report.</p>
+</li>
+</ol>
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Win ratio = 
+VAR 
+    Nominations = -- Your calculation for nominations
+VAR 
+    Wins = -- Your calculation for wins
+RETURN
+    -- Your division calculation using Nominations and Wins</pre>
+    </div>
+
+    
+    <div class="section">
+        <h2>✅ Expected Visualization</h2>
+        <img src="https://api.powerbidaxexercise.com/api/files/exercises/jqoaxhz6lgz62kk/movie_nomination_completed_7lalm7uciq.PNG" alt="✅ Expected Visualization">
+    </div>
+    
+
+    
+        <div class="section">
+            <h2>📂 Completed Solution</h2>
+            <p><a href="https://api.powerbidaxexercise.com/api/files/exercises/jqoaxhz6lgz62kk/movie_nomination_8x7wnc5hk5.pbix">📥 Download completed file</a></p>
+        </div>
+        
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

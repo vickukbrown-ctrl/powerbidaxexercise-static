@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Mastering Filter Context with REMOVEFILTERS in DAX">
+    <meta name="description" content="Understand and apply the REMOVEFILTERS function within CALCULATE to manipulate filter context, enabling calculations that ignore specific filters or all filters.">
+    <meta property="og:title" content="Mastering Filter Context with REMOVEFILTERS in DAX">
+    <meta property="og:description" content="Understand and apply the REMOVEFILTERS function within CALCULATE to manipulate filter context, enabling calculations that ignore specific filters or all filters.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/mastering-filter-context-with-removefilters-in-dax.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/mastering-filter-context-with-removefilters-in-dax.html">
+    <title>Mastering Filter Context with REMOVEFILTERS in DAX</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Mastering Filter Context with REMOVEFILTERS in DAX</h1>
+    <h3>🧮 Function: REMOVEFILTERS, CALCULATE</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        The REMOVEFILTERS function in DAX is a powerful table function that removes filters from the specified tables or columns. When used within the CALCULATE function, it modifies the filter context for the expression, allowing you to perform calculations that ignore the current selection, or specific columns/tables in the filter context. This is crucial for 'all up' totals, percentages of totals, or fixed visual axes.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As an analyst, you'll frequently need to compare a specific value (like sales for a selected product) against a grand total (like total sales for *all* products) *regardless* of current selections. This is precisely where `CALCULATE` combined with `REMOVEFILTERS` shines: `CALCULATE` allows you to evaluate an expression under a modified filter context, while `REMOVEFILTERS` within it temporarily clears any existing filters on specified tables or columns. This powerful combination is essential for creating dynamic percentage of total calculations, comparing a filtered segment against the overall performance without impacting the visual's current context.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1. Download and unzip the 'Music Tours - Calculate Remove Filters.pbix' file and open it.
+2. On Page 1, create a measure named 'Max Track Length Global' to calculate the maximum value of the 'Track length total secs' column, removing all filters.
+3. Use this 'Max Track Length Global' measure to set the maximum value of the X-axis for the chart on Page 1, ensuring the X-axis no longer changes when different artists are selected.
+4. On Page 2, create a measure named '% of Album Total' to calculate the percentage that 'Sum of track length total secs' contributes to the total for all tracks within the current album. This will require removing filters from the 'Track name' field.
+5. Create a measure named '% of Artist Total' to calculate the percentage that 'Sum of track length total secs' contributes to the total for all tracks by the current artist. This will require removing filters from the 'Album' field.
+6. Create a measure named '% of Grand Total' to calculate the percentage that 'Sum of track length total secs' contributes to the overall total of all tracks, removing all filters from the 'Tracks' table.
+7. Add these new percentage measures to the matrix on Page 2.
+8. Apply appropriate formatting (e.g., percentage format) to the new measures for better readability.
+9. Save and close the report.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Total Track Length = SUM('Tracks'[Track length total secs])</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

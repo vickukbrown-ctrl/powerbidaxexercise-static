@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Creating Calculated Columns in Power BI with DAX">
+    <meta name="description" content="Learn to create various calculated columns in Power BI using DAX to derive new analytical insights from existing data, including handling potential errors with DIVIDE.">
+    <meta property="og:title" content="Creating Calculated Columns in Power BI with DAX">
+    <meta property="og:description" content="Learn to create various calculated columns in Power BI using DAX to derive new analytical insights from existing data, including handling potential errors with DIVIDE.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/creating-calculated-columns-in-power-bi-with-dax.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/creating-calculated-columns-in-power-bi-with-dax.html">
+    <title>Creating Calculated Columns in Power BI with DAX</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Creating Calculated Columns in Power BI with DAX</h1>
+    <h3>🧮 Function: Calculated Columns, DIVIDE</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        Calculated columns are an integral part of data modeling in Power BI. Unlike measures, which are calculated at query time and return a scalar value, calculated columns are added to the table itself and their values are computed during data refresh. They consume memory and can be used in rows, columns, filters, or values in visuals, similar to regular columns. The DIVIDE function is a robust DAX function used for division, providing built-in handling for division by zero errors, returning an alternate result (defaulting to BLANK) instead of an infinity symbol or an error.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As an analyst, you'll frequently need to compute row-level ratios, such as a `Profit Margin %` for each individual product or transaction. A Calculated Column is ideal for this, allowing you to store `[Profit] / [Sales]` directly in your data model. Crucially, always embed the DIVIDE function within this column to robustly handle scenarios where `Sales` might be zero, preventing calculation errors and ensuring your reports remain reliable.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">New Column = [Column1] + [Column2]</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

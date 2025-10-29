@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Controlling Filter Context with CALCULATE and KEEPFILTERS in DAX">
+    <meta name="description" content="Learn how to use CALCULATE and KEEPFILTERS to precisely control filter context within measures, ensuring calculations apply to specific data subsets while respecting or overriding existing filters.">
+    <meta property="og:title" content="Controlling Filter Context with CALCULATE and KEEPFILTERS in DAX">
+    <meta property="og:description" content="Learn how to use CALCULATE and KEEPFILTERS to precisely control filter context within measures, ensuring calculations apply to specific data subsets while respecting or overriding existing filters.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/controlling-filter-context-with-calculate-and-keepfilters-in-dax.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/controlling-filter-context-with-calculate-and-keepfilters-in-dax.html">
+    <title>Controlling Filter Context with CALCULATE and KEEPFILTERS in DAX</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Controlling Filter Context with CALCULATE and KEEPFILTERS in DAX</h1>
+    <h3>🧮 Function: CALCULATE, KEEPFILTERS, SUMX, CONTAINSSTRING</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        CALCULATE is the most powerful DAX function, allowing you to modify the filter context in which an expression is evaluated. When CALCULATE is used, any filters specified within its filter arguments will override existing filters on the same columns. KEEPFILTERS, when used within a CALCULATE filter argument, alters this behavior; instead of overriding, it ensures that the new filter is intersected with the existing filter context for the specified column(s). This allows you to apply additional filters while still honoring existing ones from the visual or report page.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            As a DAX analyst, you'd often use `CALCULATE` in conjunction with `KEEPFILTERS` to sum (`SUMX`) the revenue of products whose names `CONTAINSSTRING` a specific keyword (e.g., 'Luxury') *without* overriding any existing filters on your report. This allows you to *add* a powerful keyword-based filter to your calculation while preserving the broader context of your analysis, like a specific sales region or time period.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1. Download and unzip the provided 'Tallest Buildings - Calculate Keep Filters.pbix' file and open it in Power BI Desktop.
+2. Observe the matrix visual, which currently displays the 'Avg height chosen cities' measure. Notice how it shows the same average height for every city instead of filtering for specific ones.
+3. Locate and edit the existing 'Avg height chosen cities' measure. Wrap the KEEPFILTERS function around the filter argument that specifies the cities (e.g., `KEEPFILTERS ( 'Buildings'[City] IN { "Dubai", "Shanghai", "Mecca" } )`).
+4. Verify that the matrix visual now correctly displays results only for the specified cities, with other cities either removed or showing BLANK.
+5. Create a new Column Chart visual. Add the 'City' field to the Axis and the (fixed) 'Avg height chosen cities' measure to the Values. Observe that the chart automatically filters to show only the specified cities.
+6. Create another new Column Chart visual. Add the 'Building Name' field to the Axis.
+7. Create a new measure named 'Total Floors for Towers'.
+8. Define the 'Total Floors for Towers' measure using a combination of CALCULATE, SUMX, KEEPFILTERS, and CONTAINSSTRING. This measure should calculate the sum of ('Floors above ground' + 'Floors below ground') for buildings whose names contain the word "tower".
+9. Add the 'Total Floors for Towers' measure to the Values of the second Column Chart visual.
+10. Review the results in the chart, observing how the measure filters and calculates only for buildings containing "tower" in their name.
+11. Save and close the report.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Avg height chosen cities = 
+VAR TargetCities = { "Dubai", "Shanghai", "Mecca" } // Adjust these cities to match your PBIX file's data
+RETURN
+    CALCULATE (
+        AVERAGE ( 'Buildings'[Height (m)] ), // Adjust 'Buildings' and 'Height (m)' to your table and column names
+        'Buildings'[City] IN TargetCities // Adjust 'City' to your column name
+    )</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

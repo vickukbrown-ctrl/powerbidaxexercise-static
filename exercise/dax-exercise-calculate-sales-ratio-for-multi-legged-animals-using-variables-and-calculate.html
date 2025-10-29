@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="DAX Exercise: Calculate Sales Ratio for Multi-Legged Animals using Variables and CALCULATE">
+    <meta name="description" content="Create a DAX measure using variables and CALCULATE to determine the ratio of sales for the current filter context to the sales of 4-legged and 6-legged animals combined within that same context, handling potential division by zero.">
+    <meta property="og:title" content="DAX Exercise: Calculate Sales Ratio for Multi-Legged Animals using Variables and CALCULATE">
+    <meta property="og:description" content="Create a DAX measure using variables and CALCULATE to determine the ratio of sales for the current filter context to the sales of 4-legged and 6-legged animals combined within that same context, handling potential division by zero.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/dax-exercise-calculate-sales-ratio-for-multi-legged-animals-using-variables-and-calculate.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/dax-exercise-calculate-sales-ratio-for-multi-legged-animals-using-variables-and-calculate.html">
+    <title>DAX Exercise: Calculate Sales Ratio for Multi-Legged Animals using Variables and CALCULATE</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>DAX Exercise: Calculate Sales Ratio for Multi-Legged Animals using Variables and CALCULATE</h1>
+    <h3>🧮 Function: VAR, CALCULATE, SUM, DIVIDE</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        This exercise leverages several core DAX concepts:
+
+1.  **Variables (VAR)**: Variables allow you to store the result of an expression and reuse it multiple times within a single measure. This significantly improves readability, maintainability, and often performance by avoiding redundant calculations. Variables are defined using `VAR` and returned using `RETURN`.
+2.  **CALCULATE**: The most powerful function in DAX. It changes the filter context in which an expression is evaluated. Filters passed to CALCULATE either override existing filters on the same column or add new filters, allowing for complex 'what-if' scenarios and comparisons. In this exercise, CALCULATE will be used to modify the filter context to specifically count sales for animals with 4 or 6 legs while preserving other filters.
+3.  **SUM**: An aggregation function that adds up all the numbers in a specified column.
+4.  **DIVIDE**: A safe division function that handles division by zero errors by allowing an optional alternate result.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            Alright team, let's look at how these fundamental DAX functions work together in a practical scenario.  As an analyst, you'd frequently use these together to calculate crucial performance metrics like a Gross Profit Margin. You would `VAR`iable-ize your `SUM`med `Revenue` and `Cost of Goods Sold` for clarity and efficiency, then use `DIVIDE` to safely compute the margin percentage. `CALCULATE` is absolutely key here, enabling you to derive that margin for a specific product *and* simultaneously compare it against the `overall company margin` by temporarily overriding any existing filters.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1.  **Download and Load Data**: Download the provided starter file, unzip it, and create a new Power BI Desktop file. Load the tables from the workbook into your model.
+2.  **Create a New Measure**: In Power BI Desktop, navigate to the 'Data' view or 'Model' view, right-click on your 'Sales' table (or any relevant table), and select 'New measure'.
+3.  **Define Variables**: 
+    *   Create a variable `__currentContextSales` to calculate the total `Sales[Quantity]` for the current filter context.
+    *   Create a variable `__fourLeggedSales` that uses `CALCULATE` to sum `Sales[Quantity]` specifically for animals with 4 legs, while maintaining the rest of the current filter context.
+    *   Create a variable `__sixLeggedSales` similarly for animals with 6 legs.
+    *   Create a variable `__multiLeggedTotal` by summing `__fourLeggedSales` and `__sixLeggedSales`.
+    *   Create a variable `__ratio` that divides `__currentContextSales` by `__multiLeggedTotal`, ensuring to handle division by zero by returning 0 in such cases.
+4.  **Return the Ratio**: The measure should `RETURN` the `__ratio` variable.
+5.  **Visualize**: Create a matrix visual, placing 'Animal Type' on rows and your new 'Sales Ratio Measure' in the values section. Observe the ratios.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">Sales Ratio Measure = 
+VAR __currentContextSales = 
+VAR __fourLeggedSales = 
+VAR __sixLeggedSales = 
+VAR __multiLeggedTotal = 
+VAR __ratio = 
+RETURN 
+    __ratio</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

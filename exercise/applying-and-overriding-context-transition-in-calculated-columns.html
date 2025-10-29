@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Applying and Overriding Context Transition in Calculated Columns">
+    <meta name="description" content="Learn to create calculated columns that leverage implicit context transition for row-specific calculations and columns that override context to calculate global totals.">
+    <meta property="og:title" content="Applying and Overriding Context Transition in Calculated Columns">
+    <meta property="og:description" content="Learn to create calculated columns that leverage implicit context transition for row-specific calculations and columns that override context to calculate global totals.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/applying-and-overriding-context-transition-in-calculated-columns.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/applying-and-overriding-context-transition-in-calculated-columns.html">
+    <title>Applying and Overriding Context Transition in Calculated Columns</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Applying and Overriding Context Transition in Calculated Columns</h1>
+    <h3>🧮 Function: SUMX, CALCULATE, ALL</h3>
+    <p><strong>Difficulty:</strong> Intermediate</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        In Power BI, a calculated column operates within a row context. When an aggregation function like SUMX is used within a calculated column, it inherently 'sees' the current row's context. This row context is then implicitly converted into a filter context, allowing the aggregation to filter related tables—this process is known as context transition. To calculate a grand total that ignores this row context (or any existing filter context), functions like CALCULATE combined with modifiers such as ALL or REMOVEFILTERS are essential to override the natural filter behavior.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            Imagine you need to calculate each product's percentage contribution to the total sales for the entire company. You would use `SUMX` to accurately compute the sales amount for each transaction row (e.g., `Quantity * UnitPrice`), ensuring proper row context for complex calculations. Then, `CALCULATE` with `ALL` would define the total sales *across all products or categories*, effectively removing any current filters to get the grand total needed for your percentage calculation.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1. Download and unzip the provided Power BI file.
+2. Open the Power BI file and navigate to the 'Product' table.
+3. Create a new calculated column named 'Total sales' that calculates the total sales across the entire database, ensuring it ignores the current product row's context.
+4. Create a second calculated column named 'Sales for product' that calculates the total sales specifically for the product in the current row. This column should leverage context transition implicitly.
+5. Create a third calculated column named 'Product contribution' which calculates the ratio of 'Sales for product' to 'Total sales'.
+6. Verify that your 'Product' table now contains these three new columns with the correct values, matching the provided screenshot.
+7. Save the file as 'Context transition is fun' and close it.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">SUMX( 'TableName', 'TableName'[Column1] * 'TableName'[Column2] )</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>

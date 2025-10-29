@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Implementing the FILTER Function for Conditional Aggregations in DAX">
+    <meta name="description" content="Learn how to effectively use the `FILTER` function within an iterator like `AVERAGEX` to perform calculations on a dynamically filtered subset of a table.">
+    <meta property="og:title" content="Implementing the FILTER Function for Conditional Aggregations in DAX">
+    <meta property="og:description" content="Learn how to effectively use the `FILTER` function within an iterator like `AVERAGEX` to perform calculations on a dynamically filtered subset of a table.">
+    <meta property="og:url" content="https://powerbidaxexercise.com/exercise/implementing-the-filter-function-for-conditional-aggregations-in-dax.html">
+    <meta property="og:type" content="article">
+    <link rel="canonical" href="https://powerbidaxexercise.com/exercise/implementing-the-filter-function-for-conditional-aggregations-in-dax.html">
+    <title>Implementing the FILTER Function for Conditional Aggregations in DAX</title>
+    <style>
+        body {
+            background-color: #0f111a;
+            color: #e5e7eb;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background-color: #1e1e2f;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        h1, h2, h3 {
+            color: #f9fafb;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 85%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+        a {
+            color: #3b82f6;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Implementing the FILTER Function for Conditional Aggregations in DAX</h1>
+    <h3>🧮 Function: FILTER, AVERAGEX</h3>
+    <p><strong>Difficulty:</strong> Beginner</p>
+    <hr>
+
+    <div class="section">
+        <h2>📚 Theory & Explanation</h2>
+        The `FILTER` function in DAX is a table function that returns a table. It takes two arguments: a table and a filter expression. For each row in the input table, the filter expression is evaluated. Only rows for which the expression evaluates to TRUE are included in the resulting table. When `FILTER` is nested within an iterator function (e.g., `SUMX`, `AVERAGEX`, `COUNTX`), it first creates a filtered table based on the specified condition. The outer iterator then performs its calculations row-by-row over this newly filtered table, allowing for flexible conditional aggregations.
+    </div>
+
+    
+
+    
+        <div class="section">
+            <h2>🧩 Example Use Case</h2>
+            Students, when you need to calculate a *conditional average*—like the average sales per order *only* for your 'High-Value Customers' or for products within a specific 'Electronics' category—you'll powerfully combine `FILTER` and `AVERAGEX`. `FILTER` first isolates the relevant rows from your base table (e.g., all sales from 'Electronics'), and then `AVERAGEX` iterates over *that specific, filtered subset* to compute the average of your chosen expression, giving you incredibly precise and targeted insights.
+        </div>
+        
+
+    <div class="section">
+        <h2>🎯 Your Task</h2>
+        1. Download and unzip the provided file "Tallest Buildings - Filter Function.pbix".
+2. Open the "Tallest Buildings - Filter Function.pbix" file in Power BI Desktop. You will see a chart showing the average number of floors for buildings in different countries.
+3. Create a new measure named "Average Floors Before 2010" which calculates the average number of floors for buildings that opened *before* the year 2010, using a combination of `AVERAGEX` and `FILTER`.
+4. Create another new measure named "Average Floors Since 2010" which calculates the average number of floors for buildings that opened *since* (including) the year 2010, also using `AVERAGEX` and `FILTER`.
+5. Add both newly created measures to the existing chart.
+6. Observe the updated chart, which should now display the average number of floors for both categories alongside the original average.
+7. Save and close the report.
+        <pre style="background-color:#27293d; padding:10px; border-radius:8px; color:#a5b4fc;">New Measure = 
+AVERAGEX(
+    FILTER(
+        'YourTable',
+        'YourTable'[YourYearColumn] < 2010
+    ),
+    'YourTable'[ValueColumn]
+)</pre>
+    </div>
+
+    
+
+    
+
+    <div class="footer">
+        <p>© 2025 DAX Trainer | Learn Power BI DAX the practical way.</p>
+        <a href="/index.html">🏠 Home</a> •
+        <a href="/terms.html">Terms</a> •
+        <a href="/privacy.html">Privacy</a>
+    </div>
+</div>
+</body>
+</html>
